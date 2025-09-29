@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Floating Island</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+      <div class="spinner"></div>
+      <p>Traveling To The Island...</p>
+    </div>
+    <div id="app"></div>
+
+      <div class="overview page">
+        <button class="exit-btn">✕</button>
+        <h1>Floating Island</h1>
+        <h2>Welcome to my portfolio website!</h2>
+        <p>This is a brief overview of who I am and what I do.</p>
+
+        <!-- Social Links -->
+        <div class="social-links">
+          <a href="https://github.com/kfir989" target="_blank" class="social-link">
+            <img src="/Images/github.png" alt="GitHub"> GitHub
+          </a>
+          <a href="https://www.linkedin.com/in/kfir-kraus-6029b81b5/" target="_blank" class="social-link">
+            <img src="/Images/linkedin.png" alt="LinkedIn"> LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <div class="aboutme page">
+        <button class="exit-btn">✕</button>
+        <h1>About Me</h1>
+        <p>This is the about me section where I share my background, skills, and interests.</p>
+
+        <!-- New paragraph -->
+        <p class="intro">
+          I am an aspiring software engineer with a specialization in cybersecurity, recently graduated from Sapir College.
+          I’m passionate about building clean, efficient applications and exploring the latest techniques in cyber defense.
+          I enjoy combining strong software engineering practices with security-focused thinking to deliver robust, high-quality solutions.
+        </p>
+
+        <!-- Skills Table -->
+        <div class="skills-table">
+          <div class="skills-column">
+            <ul>
+              <li>
+                <span class="skill-name">JavaScript</span>
+                <div class="skill-bar"><div class="fill" style="width: 85%"></div></div>
+              </li>
+              <li>
+                <span class="skill-name">React</span>
+                <div class="skill-bar"><div class="fill" style="width: 75%"></div></div>
+              </li>
+              <li>
+                <span class="skill-name">Node.js</span>
+                <div class="skill-bar"><div class="fill" style="width: 70%"></div></div>
+              </li>
+              <li>
+                <span class="skill-name">Databases</span>
+                <div class="skill-bar"><div class="fill" style="width: 80%"></div></div>
+              </li>
+              <li>
+                <span class="skill-name">Git / Version Control</span>
+                <div class="skill-bar"><div class="fill" style="width: 90%"></div></div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skills-column">
+            <ul>
+              <li>
+                <span class="skill-name">Operating Systems</span>
+                <div class="skill-bar"><div class="fill" style="width: 95%"></div></div>
+              </li>
+              <li>
+                <span class="skill-name">Java</span>
+                <div class="skill-bar"><div class="fill" style="width: 85%"></div></div>
+              </li>
+              <li>
+                <span class="skill-name">Python</span>
+                <div class="skill-bar"><div class="fill" style="width: 70%"></div></div>
+              </li>
+              <li>
+                <span class="skill-name">SIEM</span>
+                <div class="skill-bar"><div class="fill" style="width: 50%"></div></div>
+              </li>
+              <li>
+                <span class="skill-name">Agile / Scrum</span>
+                <div class="skill-bar"><div class="fill" style="width: 80%"></div></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="projects page">
+        <button class="exit-btn">✕</button>
+        <h1>Projects</h1>
+        <p>This is the projects section where I showcase my work and accomplishments.</p>
+
+        <div class="projects-list">
+          <!-- Project Row 1 -->
+          <div class="project-row">
+            <div class="project-image">
+              <img src="/Images/Project1.png" alt="Project 1">
+            </div>
+            <div class="project-info">
+              <h2>E-Commerce Digital Store</h2>
+              <p>Full-stack e-commerce web application built with React on the frontend and Node.js/Express on the backend. Users can browse a dynamic product catalog, add items to a shopping cart, and simulate checkout. Product data is stored in MongoDB, and the architecture emphasizes responsive design, modular components, and real-time state updates with React hooks. Automated tests are integrated with GitHub Actions.
+                 The live deployment showcases an end-to-end workflow from client to server, including secure data connections and frontend-backend communication.</p>
+            </div>
+          </div>
+
+          <!-- Project Row 2 -->
+          <div class="project-row">
+            <div class="project-image">
+              <img src="/Images/Project2.png" alt="Project 2">
+            </div>
+            <div class="project-info">
+              <h2>Smart Waste Management Dashboard</h2>
+              <p>A JavaFX-based desktop application that provides real-time monitoring and control of city waste collection. The dashboard offers features such as fill-level tracking of smart bins, salary and work-hour analytics, and route status updates for collection teams.
+Tech stack: Java, JavaFX, RESTful APIs, and a backend database for storing sensor data and workforce information.</p>
+            </div>
+          </div>
+
+          <!-- Project Row 3 -->
+          <div class="project-row">
+            <div class="project-image">
+              <img src="/Images/Project3.png" alt="Project 3">
+            </div>
+            <div class="project-info">
+              <h2>GPS Routing & Optimization Engine</h2>
+              <p>An algorithmic module that calculates optimal collection routes for waste trucks using OSRM (Open Source Routing Machine) and custom heuristics. This engine reduces travel distance and time while ensuring all sensor-enabled bins are serviced efficiently.
+Tech stack: Java, OSRM for map and routing services, and custom path-finding algorithms.</p>
+            </div>
+          </div>
+
+          <!-- Project Row 4 -->
+          <div class="project-row">
+            <div class="project-image">
+              <img src="/Images/Project4.png" alt="Project 4">
+            </div>
+            <div class="project-info">
+              <h2>Floating Island</h2>
+              <p>3D web experience built with Three.js and Vite, showcasing projects and personal information in an immersive, game-like environment. Visitors can explore an animated floating island and interact with different signs to reveal sections such as About Me, Projects, and Overview, creating a dynamic and visually engaging way to present a developer portfolio.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+    <div id="experience">
+      <canvas id="exp-canvas" class="exp-canvas"></canvas>
+    </div>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

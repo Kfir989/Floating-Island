@@ -1,0 +1,333 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  font-family: "Segoe UI", Roboto, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.9);
+  background: #0d0d0d;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#experience {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+#exp-canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.page {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(90%, 800px);
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, rgba(36,36,36,0.95) 0%, rgba(58,58,58,0.95) 100%);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  text-align: center;
+  z-index: 999;
+  display: none;
+  opacity: 0.95;
+}
+
+.page h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #ffffff;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.5);
+}
+
+.page h2 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  color: #a2d2ff;
+}
+
+.page p {
+  font-size: 1.25rem;
+  line-height: 1.8;
+  color: #e0e0e0;
+}
+
+.exit-btn {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255,255,255,0.3);
+  color: #fff;
+  font-size: 1.5rem;
+  line-height: 1;
+  padding: 6px 12px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.exit-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: scale(1.1);
+}
+
+.aboutme .intro {
+  margin: 1.5rem auto 2.5rem;
+  max-width: 700px;
+  font-size: 1.2rem;
+  color: #e0e0e0;
+  line-height: 1.8;
+}
+
+/* ---------- Skills Table ---------- */
+.skills-table {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.skills-column {
+  flex: 1 1 300px;
+}
+
+.skills-column ul {
+  list-style: none; /* remove default bullets */
+  padding: 0;
+}
+
+.skills-column li {
+  margin-bottom: 1.5rem;
+  position: relative;
+  padding-left: 30px; /* space for custom bullet */
+}
+
+/* Custom bullet circle */
+.skills-column li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 6px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ff6b6b, #f8d800);
+  box-shadow: 0 0 6px rgba(255,255,255,0.5);
+}
+
+/* Skill name */
+.skill-name {
+  font-size: 1.1rem;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Progress bar */
+.skill-bar {
+  margin-top: 6px;
+  width: 100%;
+  height: 10px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.skill-bar .fill {
+  height: 100%;
+  background: linear-gradient(90deg, #00c6ff, #0072ff);
+  border-radius: 5px;
+  transition: width 0.6s ease;
+}
+
+/* Projects section styling */
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 2rem;
+}
+
+/* Each project row */
+.project-row {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  padding: 1.5rem;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-row:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.6);
+}
+
+/* Project image */
+.project-image img {
+  width: 200px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid rgba(255,255,255,0.2);
+  transition: transform 0.3s ease;
+}
+
+.project-image img:hover {
+  transform: scale(1.05);
+}
+
+/* Project info */
+.project-info {
+  flex: 1;
+}
+
+.project-info h2 {
+  font-size: 1.6rem;
+  margin-bottom: 0.5rem;
+  color: #a2d2ff;
+}
+
+.project-info p {
+  font-size: 0.8rem;
+  line-height: 1.6;
+  color: #e0e0e0;
+}
+
+/* Social links container */
+.social-links {
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  align-items: center;
+}
+
+/* Each social link */
+.social-link {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1rem;
+  font-size: 1.3rem;
+  color: #ffffff;
+  text-decoration: none;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.social-link img {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+  filter: invert(1); /* make icon white if needed */
+}
+
+.social-link:hover {
+  background: rgba(162, 210, 255, 0.2);
+  transform: translateY(-3px);
+}
+
+/* Loading overlay */
+#loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0d0d0d;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  color: #ffffff;
+}
+
+/* Spinner animation */
+.spinner {
+  width: 60px;
+  height: 60px;
+  border: 6px solid rgba(255,255,255,0.2);
+  border-top-color: #a2d2ff;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Optional loading text */
+#loading-screen p {
+  font-size: 1.2rem;
+  color: #ffffff;
+  opacity: 0.8;
+}
+
+/* ---------- Responsive adjustments ---------- */
+
+/* ---------- Responsive adjustments ---------- */
+@media (max-width: 1024px) {
+  .aboutme .intro { font-size: 1.1rem; margin: 1.2rem auto 2rem; padding: 0 1rem; }
+  .skills-table { gap: 2rem; padding: 0 1rem; }
+  .project-row { gap: 1.5rem; padding: 1.2rem; }
+  .project-info h2 { font-size: 1.4rem; }
+  .project-info p { font-size: 0.9rem; }
+}
+
+@media (max-width: 768px) {
+  .page {
+    top: 5%;                 /* small margin from top */
+    left: 50%;
+    transform: translateX(-50%); /* center horizontally only */
+    padding: 2rem 1rem;
+    max-height: 90vh;         /* prevent filling full height */
+    overflow-y: auto;         /* allow scroll if content is too tall */
+  }
+
+  .aboutme .intro { font-size: 1rem; margin: 1rem auto 1.5rem; line-height: 1.6; }
+  .skills-table { flex-direction: column; gap: 1.5rem; }
+  .skills-column { flex: 1 1 100%; }
+  .skills-column li { margin-bottom: 1rem; padding-left: 26px; }
+
+  .projects-list { gap: 1.5rem; }
+  .project-row { flex-direction: column; align-items: flex-start; gap: 1rem; padding: 1rem; }
+  .project-image img { max-width: 100%; height: auto; }
+  .project-info h2 { font-size: 1.3rem; margin-bottom: 0.4rem; }
+  .project-info p { font-size: 0.9rem; line-height: 1.5; }
+
+  .social-links { margin-top: 1.5rem; gap: 0.6rem; }
+  .social-link { font-size: 1.1rem; padding: 0.4rem 0.8rem; }
+  .social-link img { width: 24px; height: 24px; }
+}
+
+@media (max-width: 480px) {
+  .page {
+    top: 3%;
+    padding: 1.5rem 1rem;
+  }
+
+  .aboutme .intro { font-size: 0.95rem; }
+  .project-info h2 { font-size: 1.1rem; }
+  .project-info p { font-size: 0.85rem; }
+}
