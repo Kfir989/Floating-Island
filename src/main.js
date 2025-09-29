@@ -57,9 +57,8 @@ window.addEventListener("load", () => {
 
   // Load EXR environment
   new EXRLoader().load(
-    '/environment/sky.exr',
+    "/environment/sky.exr",
     (texture) => {
-      // Set scene environment & background
       texture.mapping = THREE.EquirectangularReflectionMapping;
       scene.background = texture;
       scene.environment = texture;
@@ -70,18 +69,19 @@ window.addEventListener("load", () => {
         duration: 0.5,
         onComplete: () => {
           loader.style.display = "none";
+          document.body.classList.remove("loading"); // <-- show the page
         }
       });
     },
-    undefined, // onProgress (optional)
+    undefined,
     (error) => {
       console.error("Error loading EXR:", error);
-      // Hide loader even if EXR fails
       gsap.to(loader, {
         opacity: 0,
         duration: 0.5,
         onComplete: () => {
           loader.style.display = "none";
+          document.body.classList.remove("loading"); // <-- show the page even on error
         }
       });
     }
@@ -93,7 +93,7 @@ window.addEventListener('mousemove', (e) => {
   pointer.y = -(e.clientY / window.innerHeight) * 2 + 1;
 });
 
-window.addEventListener('click', () => {
+window.addEventListener('pointerdown', () => {
   if (intersects.length > 0) {
     const obj = intersects[0].object;
     //console.log(obj);
@@ -139,8 +139,6 @@ gltfLoader.load(
         }
         if (child.name.includes('Box001_Material_#25_0')) {
           RayObjects.push(child);
-          // store original color for highlight reset
-          //child.userData.originalColor = child.material.color.clone();
         }
       }
     });
@@ -183,7 +181,7 @@ renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 // ──────────────────────────────────────────────
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.enableDamping = true;
-controls.dampingFactor = 0.05;
+controls.dampingFactor = 0.1;
 controls.screenSpacePanning = false;
 controls.enableZoom = true;
 controls.minDistance = 10;
@@ -211,14 +209,6 @@ window.addEventListener('resize', () => {
 // Render loop
 // ──────────────────────────────────────────────
 let intersects = [];
-//let highlighted = [];
-
-//function resetHighlights() {
-//  highlighted.forEach(obj =>
-//    obj.material.color.copy(obj.userData.originalColor)
-//  );
-//  highlighted = [];
-//}
 
 function render() {
   if (windmill) {
@@ -228,13 +218,6 @@ function render() {
   raycaster.setFromCamera(pointer, camera);
 
   intersects = raycaster.intersectObjects(RayObjects);
-
-  // ✅ highlight hovered objects, reset previous highlights
-  //resetHighlights();
-  //intersects.forEach(hit => {
-  //  hit.object.material.color.set(0xff0000);
-  //  highlighted.push(hit.object);
-  //});
 
   controls.update();
   renderer.render(scene, camera);
