@@ -90,47 +90,36 @@ window.addEventListener("load", () => {
 
 function updatePointer(event) {
   if (event.type.startsWith('touch')) {
-    // Mobile / touch event
     const touch = event.touches[0];
     pointer.x = (touch.clientX / window.innerWidth) * 2 - 1;
     pointer.y = -(touch.clientY / window.innerHeight) * 2 + 1;
   } else {
-    // Mouse event
     pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
     pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
   }
 }
 
+function handlePick() {
+  if (intersects.length > 0) {
+    const obj = intersects[0].object;
+    if (obj.name.includes('Box001_Material_#25_0002')) {
+      showPage(modals.overview);
+    } else if (obj.name.includes('Box001_Material_#25_0001')) {
+      showPage(modals.projects);
+    } else if (obj.name.includes('Box001_Material_#25_0')) {
+      showPage(modals.about);
+    }
+  }
+}
 
+// Pointer updates
 window.addEventListener('mousemove', updatePointer);
+window.addEventListener('touchmove', updatePointer);
 window.addEventListener('touchstart', updatePointer);
 
-window.addEventListener('click', () => {
-  if (intersects.length > 0) {
-    const obj = intersects[0].object;
-    //console.log(obj);
-    if (obj.name.includes('Box001_Material_#25_0002')) {
-      showPage(modals.overview);
-    } else if (obj.name.includes('Box001_Material_#25_0001')) {
-      showPage(modals.projects);
-    } else if (obj.name.includes('Box001_Material_#25_0')) {
-      showPage(modals.about);
-    }
-  }
-});
-
-window.addEventListener('touchstart', (e) => {
-  if (intersects.length > 0) {
-    const obj = intersects[0].object;
-    if (obj.name.includes('Box001_Material_#25_0002')) {
-      showPage(modals.overview);
-    } else if (obj.name.includes('Box001_Material_#25_0001')) {
-      showPage(modals.projects);
-    } else if (obj.name.includes('Box001_Material_#25_0')) {
-      showPage(modals.about);
-    }
-  }
-});
+// Picking
+window.addEventListener('click', handlePick);      // desktop
+window.addEventListener('touchend', handlePick);  // mobile
 
 document.querySelectorAll('.page .exit-btn').forEach(btn => {
   btn.addEventListener('click', (e) => {
