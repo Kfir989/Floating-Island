@@ -55,7 +55,7 @@ window.addEventListener("load", () => {
   const loader = document.getElementById("loading-screen");
   if (!loader) return;
 
-  // Load EXR environment
+
   new EXRLoader().load(
     "/environment/sky.exr",
     (texture) => {
@@ -63,13 +63,12 @@ window.addEventListener("load", () => {
       scene.background = texture;
       scene.environment = texture;
 
-      // Fade out loader after EXR is ready
       gsap.to(loader, {
         opacity: 0,
         duration: 0.5,
         onComplete: () => {
           loader.style.display = "none";
-          document.body.classList.remove("loading"); // <-- show the page
+          document.body.classList.remove("loading"); 
         }
       });
     },
@@ -81,7 +80,7 @@ window.addEventListener("load", () => {
         duration: 0.5,
         onComplete: () => {
           loader.style.display = "none";
-          document.body.classList.remove("loading"); // <-- show the page even on error
+          document.body.classList.remove("loading"); 
         }
       });
     }
@@ -112,14 +111,14 @@ function handlePick() {
   }
 }
 
-// Pointer updates
+
 window.addEventListener('mousemove', updatePointer);
 window.addEventListener('touchmove', updatePointer);
 window.addEventListener('touchstart', updatePointer);
 
-// Picking
-window.addEventListener('click', handlePick);      // desktop
-window.addEventListener('touchend', handlePick);  // mobile
+
+window.addEventListener('click', handlePick);      
+window.addEventListener('touchend', handlePick);  
 
 document.querySelectorAll('.page .exit-btn').forEach(btn => {
   btn.addEventListener('click', (e) => {
@@ -140,7 +139,7 @@ let windmill = null;
 const RayObjects = [];  
 
 gltfLoader.load(
-  '/model/myIsland6-v1.glb',
+  '/model/myIsland7-v1.glb',
   (gltf) => {
     gltf.scene.scale.set(0.4, 0.4, 0.4);
     gltf.scene.position.set(0, -1, 0);
