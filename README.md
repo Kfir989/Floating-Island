@@ -10,11 +10,11 @@
 
 <p align="center">
   <!-- Core project info -->
-  <img src="https://img.shields.io/badge/Project-Cyberpunk%203D%20Portfolio-4CAF50?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Project-Floating%20Island%203D%20Experience-4CAF50?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Status-Completed-green?style=for-the-badge" />
-  <img src="https://img.shields.io/github/repo-size/Kfir989/cyberpunk-portfolio?style=for-the-badge" />
-  <img src="https://img.shields.io/github/stars/Kfir989/cyberpunk-portfolio?style=for-the-badge" />
-  <img src="https://img.shields.io/github/last-commit/Kfir989/cyberpunk-portfolio?style=for-the-badge" />
+  <img src="https://img.shields.io/github/repo-size/Kfir989/Floating-Island?style=for-the-badge" />
+  <img src="https://img.shields.io/github/stars/Kfir989/Floating-Island?style=for-the-badge" />
+  <img src="https://img.shields.io/github/last-commit/Kfir989/Floating-Island?style=for-the-badge" />
   <img src="https://img.shields.io/badge/Style-CSS-1572B6?style=for-the-badge&logo=css3&logoColor=white" />
   <br/>
 
@@ -27,6 +27,7 @@
   <img src="https://img.shields.io/badge/Models-Blender-F5792A?style=for-the-badge&logo=blender" />
   <img src="https://img.shields.io/badge/Format-GLTF%2FGLB-8E8E8E?style=for-the-badge&logo=three.js"/>
 
+  <img src="https://img.shields.io/badge/Environment-HDRI-blue?style=for-the-badge" />
 </p>
 
 ## 📋 Overview
